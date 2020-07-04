@@ -95,7 +95,6 @@ $(document).ready(function() {
 		if (count == 8) {
 			$('#game-ovarlay').addClass('game-container-overlay');
 			$('#counter').text('Winner!');
-			$('.timer span').text('');
 			clearInterval(gameTimer);
 		}
 	}
