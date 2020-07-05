@@ -4,7 +4,7 @@ body {
 
 #counter {
 	position: fixed;
-	top: 43%;
+	top: 47%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-size: 61px;
@@ -12,6 +12,12 @@ body {
 	z-index: 500;
 	width: 100%;
 	text-align: center;
+}
+
+@media screen and (max-width: 375px) {
+	#counter {
+		top: 43%;
+	}
 }
 .container {
 	width: 350px;
