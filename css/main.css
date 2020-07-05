@@ -4,12 +4,14 @@ body {
 
 #counter {
 	position: fixed;
-	top: 47%;
+	top: 43%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-size: 61px;
 	color: #393e46;
 	z-index: 500;
+	width: 100%;
+	text-align: center;
 }
 .container {
 	width: 350px;

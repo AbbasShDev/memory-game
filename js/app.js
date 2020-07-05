@@ -60,9 +60,10 @@ $(document).ready(function() {
 		$('.game-item').click(function() {
 			$(this).find('.game-item-overlay').fadeOut('fast');
 
-			if ($(this).hasClass('compered')) {
+			if ($(this).hasClass('compered') || $(this).hasClass('comparing')) {
 				return;
 			}
+			$(this).addClass('comparing');
 			compared.push($(this));
 
 			if (compared.length == 2) {
@@ -79,12 +80,16 @@ $(document).ready(function() {
 				if (matched) {
 					compared[0].addClass('compered');
 					compared[1].addClass('compered');
+					compared[0].removeClass('comparing');
+					compared[1].removeClass('comparing');
 					compared = [];
 					count++;
 					winner();
 				} else {
 					compared[0].find('.game-item-overlay').fadeIn(1000);
 					compared[1].find('.game-item-overlay').fadeIn(1000);
+					compared[0].removeClass('comparing');
+					compared[1].removeClass('comparing');
 					compared = [];
 				}
 			}
@@ -110,6 +115,7 @@ $(document).ready(function() {
 				clearInterval(gameTimer);
 				$('#game-ovarlay').addClass('game-container-overlay');
 				$('#counter').text('Game Over!');
+				$('.timer span').text('0');
 				return;
 			} else {
 				$('.timer span').text(counter);
